@@ -1,8 +1,8 @@
-# Desafio da semana #3
+// # Desafio da semana #3
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+const emptyObj = {}
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,14 +16,23 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
+const pessoa = {
+    nome: 'Yoda',
+    sobrenome: 'Zi',
+    sexo: 'Masculino',
+    idade: 900,
+    altura: 0.66,
+    andando: false,
+    peso: 30,
+    caminhouQuantosMetros: 0,
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-?
+pessoa.fazerAniversario = () => { pessoa.idade++ }
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -35,103 +44,113 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-?
+pessoa.andar = (walked) { 
+    pessoa.andando = true
+    pessoa.caminhouQuantosMetros += walked
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-?
+pessoa.parar = () => pessoa.andando = false
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 ?
+pessoa.nomeCompleto = () => `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome}`
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostrarIdade = () => `Olá! eu tenho ${pessoa.idade} anos`
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 ?
+pessoa.mostrarPeso = () => `Eu peso ${pessoa.peso}Kg.`
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+pessoa.mostrarAltura = () => `Minha altura é ${pessoa.altura}m`
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.nomeCompleto() // Olá! Meu nome é Yoda Zi
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarIdade() //Olá eu tenho 900 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarPeso() //Eu peso 30kg
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarAltura() //Minha altura é 0.66m
+
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+pessoa.fazerAniversario()
+pessoa.fazerAniversario()
+pessoa.fazerAniversario()
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+pessoa.mostrarIdade() //Olá eu tenho 903 anos!
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+pessoa.andar(100)
+pessoa.andar(200)
+pessoa.andar(200)
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andando // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+if (pessoa.andando) pessoa.parar()
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andando // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosPassos // 500
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -153,5 +172,9 @@ correta, de acordo com os dados inseridos no objeto.
 ?
 
 // Agora, apresente-se ;)
-?
+const getAge = (age) => age === 1 `${age} ano` : `${age} anos`
+const getWalked = (walked) => walked === 1 `${walked} metro` : `${walked} metros`
+const getText = (article, pessoa) => `Olá, eu sou ${article } ${pessoa.nome } ${pessoa.sobrenome }, tenho ${getAge(pessoa.idade) }, ${pessoa.altura }, meu peso é ${pessoa.peso } e, só hoje, eu já caminhei ${getWalked(pessoa.caminhouQuantosMetros)}`
+
+pessoa.apresentacao = () => pessoa.sexo === 'Feminino' ? getText('a', pessoa) : getText('o', pessoa)
 ```
