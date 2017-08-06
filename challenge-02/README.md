@@ -4,29 +4,35 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+const sum = (x, y) => x + y
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+const plusFive = (count) => count + 5
+const sumPlusFive = (x, y) => plusFive(sum(x, y))
 
 // Qual o valor atualizado dessa variável?
-?
+console.log(sumPlusFive(2,3))
 
 // Declare uma nova variável, sem valor.
-?
+let content
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+const fillContent = (value) => {
+  content = value
+  return `O valor da variável agora é ${content}`
+}
 
 // Invoque a função criada acima.
-?
+fillContent(10)
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+* O valor da variável agora é 10.
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +41,21 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+const multiply = (x,y,z) => (!x || !y || !z) ? "Preencha todos os valores corretamente!" : (x * y * z)
+const plusThree = (count) => count + 3
+const multiplyAndPlusThree = (x, y, z) => plusThree(multiply(x,y,z))
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+multiplyAndPlusThree(1,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiplyAndPlusThree(2,4,5)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+42
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +66,21 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+const checkArguments = (x, y, z) => {
+  const arguments = [x, y, z]
+  if (arguments.length == 1) return arguments[0]
+  if (arguments.length == 2) return arguments[0] +  arguments[1]
+  if (arguments.length == 3) return (arguments[0] +  arguments[1]) / 3
+  if (arguments.length == 0) return false
+  
+  return null
+}
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+checkArguments(5) // 5
+checkArguments(10, 2) // 7
+checkArguments(10, 2, 3) // 4
+checkArguments() // false
+checkArguments(10, 2, 3, 5) // null
 ```
