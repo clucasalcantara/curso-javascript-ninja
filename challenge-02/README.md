@@ -43,16 +43,16 @@ Crie uma função com as seguintes características:
 */
 const multiply = (x,y,z) => (x === undefined || y === undefined || z === undefined) ? "Preencha todos os valores corretamente!" : (x * y * z)
 const plusTwo = (count) => count + 2
-const multiplyAndPlusTwo = (x, y, z) => plusThree(multiply(x,y,z))
+const multiplyAndPlusTwo = (x, y, z) => plusTwo(multiply(x,y,z))
 
 // Invoque a função criada acima, passando só dois números como argumento.
-multiplyAndPlusThree(1,2)
+multiplyAndPlusTwo(1,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-multiplyAndPlusThree(2,4,5)
+multiplyAndPlusTwo(2,4,5)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 42
