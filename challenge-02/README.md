@@ -68,10 +68,10 @@ Crie uma função com as seguintes características:
 */
 const checkArguments = (x, y, z) => {
   const arguments = [x, y, z]
-  if (arguments.length == 1) return arguments[0]
-  if (arguments.length == 2) return arguments[0] +  arguments[1]
-  if (arguments.length == 3) return (arguments[0] +  arguments[1]) / 3
-  if (arguments.length == 0) return false
+  if (arguments.length === 1) return x
+  if (arguments.length === 2) return x + y
+  if (arguments.length === 3) return (x + y) / z
+  if (arguments.length === 0) return false
   
   return null
 }
