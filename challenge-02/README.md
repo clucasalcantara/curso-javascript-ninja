@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-const multiply = (x,y,z) => (!x || !y || !z) ? "Preencha todos os valores corretamente!" : (x * y * z)
+const multiply = (x,y,z) => (x === undefined || y === undefined || z === undefined) ? "Preencha todos os valores corretamente!" : (x * y * z)
 const plusThree = (count) => count + 3
 const multiplyAndPlusThree = (x, y, z) => plusThree(multiply(x,y,z))
 
