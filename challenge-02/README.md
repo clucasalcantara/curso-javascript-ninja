@@ -42,8 +42,8 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 const multiply = (x,y,z) => (x === undefined || y === undefined || z === undefined) ? "Preencha todos os valores corretamente!" : (x * y * z)
-const plusThree = (count) => count + 3
-const multiplyAndPlusThree = (x, y, z) => plusThree(multiply(x,y,z))
+const plusTwo = (count) => count + 2
+const multiplyAndPlusTwo = (x, y, z) => plusThree(multiply(x,y,z))
 
 // Invoque a função criada acima, passando só dois números como argumento.
 multiplyAndPlusThree(1,2)
