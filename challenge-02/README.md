@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 const multiply = (x,y,z) => (x === undefined || y === undefined || z === undefined) ? "Preencha todos os valores corretamente!" : (x * y * z)
-const plusTwo = (count) => count + 2
+const plusTwo = (count) => !isNaN(count) ?  count + 2 : count
 const multiplyAndPlusTwo = (x, y, z) => plusTwo(multiply(x,y,z))
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -55,7 +55,7 @@ multiplyAndPlusTwo(1,2)
 multiplyAndPlusTwo(2,4,5)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-42
+// 42
 
 /*
 Crie uma função com as seguintes características:
