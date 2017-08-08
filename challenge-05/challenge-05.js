@@ -69,33 +69,36 @@ const book = (bookName) => {
   if (typeof bookName === undefined) return bookShelf
   
   const findBook = (bookName) => {
-    Object.getOwnPropertyNames(bookShelf).filter(key => key === "livro1")
+    return Object.getOwnPropertyNames(bookShelf).filter(key => key === bookName)
   }
-  
+
+  console.log(`O livro ${bookName} tem bookShelf[bookName].quantidadedePaginas`)
+  console.log(`O autor do livro ${bookName} é bookShelf[bookName].autor`)
+  console.log(`O livro ${bookName} foi publicado pela editora bookShelf[bookName].editora`)
+
   return bookShelf[findBook(bookName)]
 }
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book()
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
-
+book("livro1")
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+book("livro2")
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+book("livro3")
