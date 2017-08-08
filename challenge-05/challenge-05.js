@@ -2,17 +2,17 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+const array = [1,2,3,4,5]
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+const returnArray = array => array
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+returnArray(array)[2]
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +20,18 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+const getIndexOf = (array, number) => array.indexOf(number)
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+const mixArray = [1, "a", 3, {}, 0.5]
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+const getMixArray = array => array.map(item => item)
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,8 +47,33 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
-
+const book = (bookName) => {
+  const bookShelf = {
+    livro1: {
+      quantidadedePaginas: 537,
+      autor: "Rick Riordan",
+      editora: "Sextante",
+    },
+    livro2: {
+      quantidadedePaginas: 537,
+      autor: "Rick Riordan",
+      editora: "Sextante",
+    },
+    livro3: {
+      quantidadedePaginas: 537,
+      autor: "Rick Riordan",
+      editora: "Sextante",
+    },
+  }
+  
+  if (typeof bookName === undefined) return bookShelf
+  
+  const findBook = (bookName) => {
+    Object.getOwnPropertyNames(bookShelf).filter(key => key === "livro1")
+  }
+  
+  return bookShelf[findBook(bookName)]
+}
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
