@@ -51,7 +51,33 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-// ?
+const calculator = (operation) => (x, y) => {
+  let result = 0
+  switch(operation) {
+    case "+": {
+        result = x + y
+        break
+    }
+    case "-": {
+        result = x - y
+        break
+    }
+    case "/": {
+        result = x / y
+    }
+    case "*": {
+        result = x * y
+        break
+    }
+    default: {
+        result = "Operação inv"
+        break
+    }
+  }
+  if (isNaN(result)) return "Operação não permitida"
+
+  return `${x} ${operation} ${y} = ${result}`
+}
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
